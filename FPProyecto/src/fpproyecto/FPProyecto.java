@@ -90,7 +90,7 @@ public class FPProyecto {
             //System.out.println("Cuantas medallas de bronce:  ");
             //medallaBronce = entrada3.nextInt();
             
-         //   total = (medallaOro * oro) + (medallaPlata * plata) + (medallaBronce * bronce);
+          // total = (medallaOro * oro) + (medallaPlata * plata) + (medallaBronce * bronce);
             
           //  resultado.put(pais , total);
             
