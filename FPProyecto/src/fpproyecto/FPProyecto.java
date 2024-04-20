@@ -85,7 +85,16 @@ public class FPProyecto {
                 {
                     for (int i = 0; i < paises.size(); i++)
                     {
-                        
+                        puntajeTotal.add(oro.get(i)*3 + plata.get(i)* 2 + bronce.get(i));
+                    }
+                }
+                if(bandera == 4)
+                {
+                    System.out.print("\nTabla de puntaje\n");
+                    System.out.print("Paises    puntajes\n");
+                    for(int j = 0; j < paises.size(); j++)
+                    {
+                        System.out.print(paises.get(j)+"  "+ puntajeTotal.get(j));
                     }
                 }
                         
@@ -95,6 +104,6 @@ public class FPProyecto {
         System.out.print(oro);
         System.out.print(plata);
         System.out.print(bronce);
-       
+        System.out.print(puntajeTotal);
     }
 }
