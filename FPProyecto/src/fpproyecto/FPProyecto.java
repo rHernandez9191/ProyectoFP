@@ -24,9 +24,9 @@ public class FPProyecto {
         Scanner entrada4 = new Scanner(System.in);
         
         ArrayList<String> paises = new ArrayList();
-        ArrayList<String> oro = new ArrayList();
-        ArrayList<String> plata = new ArrayList();
-        ArrayList<String> bronce = new ArrayList();
+        ArrayList<Integer> oro = new ArrayList();
+        ArrayList<Integer> plata = new ArrayList();
+        ArrayList<Integer> bronce = new ArrayList();
         
         int bandera;
         
@@ -63,40 +63,26 @@ public class FPProyecto {
                 }
                 if(bandera == 2)
                 {
-                   int medallaOro, medallaPlata, medallaBronce;  
-                   System.out.println("Cuantas medallas de oro para  " + paises.get(0 ));
-                   medallaOro = entrada.nextInt();
+                   for(int p = 0; p < paises.size(); p++)
+                   {
+                        int medallaOro, medallaPlata, medallaBronce; 
+                        
+                        System.out.println("Cuantas medallas de oro para  " + paises.get(p ));
+                        medallaOro = entrada.nextInt();
+                        oro.add(medallaOro);
+                        
+                        System.out.println("Cuantas medallas de plata para "+ paises.get(p));
+                        medallaPlata = entrada2.nextInt();
+        
+                        System.out.println("Cuantas medallas de bronce para "+ paises.get(p));
+                        medallaBronce = entrada3.nextInt();
+                   }
+                   
                 }
                         
             } while (bandera != 10);
   
-              
-        int total;
         
-        Map <String, Integer> resultado = new HashMap <>();
-        
-       // while () 
-        {
-            
-            
-            
-            
-            
-            
-        
-            //System.out.println("Cuantas medallas de plata:  ");
-           // medallaPlata = entrada2.nextInt();
-        
-            //System.out.println("Cuantas medallas de bronce:  ");
-            //medallaBronce = entrada3.nextInt();
-            
-          // total = (medallaOro * oro) + (medallaPlata * plata) + (medallaBronce * bronce);
-            
-          //  resultado.put(pais , total);
-            
-         
-        }
-        
-       // System.out.print(proceso1.mayorPuntaje(resultado));
+       
     }
 }
