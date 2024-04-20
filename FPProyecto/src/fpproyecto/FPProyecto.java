@@ -84,10 +84,10 @@ public class FPProyecto {
             
             
         
-            System.out.println("Cuantas medallas de plata:  ");
+            //System.out.println("Cuantas medallas de plata:  ");
            // medallaPlata = entrada2.nextInt();
         
-            System.out.println("Cuantas medallas de bronce:  ");
+            //System.out.println("Cuantas medallas de bronce:  ");
             //medallaBronce = entrada3.nextInt();
             
          //   total = (medallaOro * oro) + (medallaPlata * plata) + (medallaBronce * bronce);
