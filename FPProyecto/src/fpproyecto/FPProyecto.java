@@ -73,9 +73,11 @@ public class FPProyecto {
                         
                         System.out.println("Cuantas medallas de plata para "+ paises.get(p));
                         medallaPlata = entrada2.nextInt();
+                        plata.add(medallaPlata);
         
                         System.out.println("Cuantas medallas de bronce para "+ paises.get(p));
                         medallaBronce = entrada3.nextInt();
+                        bronce.add(medallaBronce);
                    }
                    
                 }
