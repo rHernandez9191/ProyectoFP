@@ -84,7 +84,10 @@ public class FPProyecto {
                         
             } while (bandera != 10);
   
-        
+        System.out.print(paises);
+        System.out.print(oro);
+        System.out.print(plata);
+        System.out.print(bronce);
        
     }
 }
