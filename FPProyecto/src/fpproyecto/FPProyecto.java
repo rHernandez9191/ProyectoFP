@@ -27,6 +27,7 @@ public class FPProyecto {
         ArrayList<Integer> oro = new ArrayList();
         ArrayList<Integer> plata = new ArrayList();
         ArrayList<Integer> bronce = new ArrayList();
+        ArrayList<Integer> puntajeTotal = new ArrayList();
         
         int bandera;
         
@@ -79,7 +80,13 @@ public class FPProyecto {
                         medallaBronce = entrada3.nextInt();
                         bronce.add(medallaBronce);
                    }
-                   
+                }
+                if(bandera == 3)
+                {
+                    for (int i = 0; i < paises.size(); i++)
+                    {
+                        
+                    }
                 }
                         
             } while (bandera != 10);
