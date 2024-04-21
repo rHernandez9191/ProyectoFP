@@ -32,7 +32,7 @@ public class FPProyecto {
         int bandera;
         
         do {                
-                System.out.println("Eliga una opcion");
+                System.out.println("\nEliga una opcion");
                 System.out.println("""
                                   1.Iniciar Programa
                                   2.Registrar Informacion
@@ -91,11 +91,15 @@ public class FPProyecto {
                 if(bandera == 4)
                 {
                     System.out.print("\nTabla de puntaje\n");
-                    System.out.print("Paises    puntajes\n");
+                    System.out.print("\nPaises\tpuntajes\n");
                     for(int j = 0; j < paises.size(); j++)
                     {
-                        System.out.print(paises.get(j)+"  "+ puntajeTotal.get(j));
+                        System.out.print(paises.get(j) +"\t"+ puntajeTotal.get(j)+"\n");
                     }
+                }
+                if(bandera == 5)
+                {
+                    
                 }
                         
             } while (bandera != 10);
