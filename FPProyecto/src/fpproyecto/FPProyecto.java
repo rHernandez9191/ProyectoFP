@@ -1,17 +1,13 @@
 package fpproyecto;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.util.HashMap;
+
 
 public class FPProyecto {
-        
-        Proceso proceso1 = new Proceso();
         
         static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         static PrintStream out = System.out;
