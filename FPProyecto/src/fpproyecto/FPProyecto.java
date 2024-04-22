@@ -1,10 +1,12 @@
 package fpproyecto;
+import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.Collections;
 
 
 public class FPProyecto {
@@ -96,14 +98,36 @@ public class FPProyecto {
                 if(bandera == 5)
                 {
                     
+                    Collections.max(plata);
                 }
-                        
+                
+                if(bandera == 6)
+                {
+                    int suma = 0;
+                    int count = 0;
+                    while( count < bronce.size())
+                    {
+                        suma += bronce.get(count);
+                        count ++;
+                    }
+                    System.out.print("El promedio de medallas de bronce es:\n" + suma/bronce.size());
+                }
+                
+                if(bandera == 7)
+                {
+                    
+                }
+                
+                if(bandera == 8)
+                {
+                    
+                }
+                
+                if(bandera == 9)
+                {
+                    
+                }                
             } while (bandera != 10);
   
-        System.out.print(paises);
-        System.out.print(oro);
-        System.out.print(plata);
-        System.out.print(bronce);
-        System.out.print(puntajeTotal);
     }
 }
