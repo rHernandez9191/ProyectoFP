@@ -1,5 +1,4 @@
 package fpproyecto;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -89,10 +88,10 @@ public class FPProyecto {
                 if(bandera == 4)
                 {
                     System.out.print("\nTabla de puntaje\n");
-                    System.out.print("\nPaises\tpuntajes\n");
+                    System.out.printf("%10s |%8s%n", "Paises","puntajes");
                     for(int j = 0; j < paises.size(); j++)
                     {
-                        System.out.print(paises.get(j) +"\t"+ puntajeTotal.get(j)+"\n");
+                        System.out.printf("%n %8s  %8s",paises.get(j) , puntajeTotal.get(j));
                     }
                 }
                 if(bandera == 5)
@@ -110,7 +109,7 @@ public class FPProyecto {
                         suma += bronce.get(count);
                         count ++;
                     }
-                    System.out.print("El promedio de medallas de bronce es:\n" + suma/bronce.size());
+                    System.out.print("\nEl promedio de medallas de bronce es:\n" + suma/bronce.size()+" \n");
                 }
                 
                 if(bandera == 7)
