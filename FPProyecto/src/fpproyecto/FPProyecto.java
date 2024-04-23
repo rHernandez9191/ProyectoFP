@@ -1,132 +1,119 @@
 package fpproyecto;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Collections;
-
+import java.util.Scanner;
 
 public class FPProyecto {
-        
-        static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        static PrintStream out = System.out;
-        
-    public void main(String[] args) throws IOException {
-        
+
+    static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    static PrintStream out = System.out;
+
+    public static void main(String[] args) throws IOException {
         Scanner entrada = new Scanner(System.in);
-        Scanner entrada2 = new Scanner(System.in);
-        Scanner entrada3 = new Scanner(System.in);
-        Scanner entrada4 = new Scanner(System.in);
-        
-        ArrayList<String> paises = new ArrayList();
-        ArrayList<Integer> oro = new ArrayList();
-        ArrayList<Integer> plata = new ArrayList();
-        ArrayList<Integer> bronce = new ArrayList();
-        ArrayList<Integer> puntajeTotal = new ArrayList();
-        
+
+        ArrayList<String> paises = new ArrayList<>();
+        ArrayList<Integer> oro = new ArrayList<>();
+        ArrayList<Integer> plata = new ArrayList<>();
+        ArrayList<Integer> bronce = new ArrayList<>();
+        ArrayList<Integer> puntajeTotal = new ArrayList<>();
+
         int bandera;
-        
-        do {                
-                System.out.println("\nEliga una opcion");
-                System.out.println("""
-                                  1.Iniciar Programa
-                                  2.Registrar Informacion
-                                  3.Calcular Puntaje total
-                                  4.Imprimir puntaje de cada pais
-                                  5.Pais con mas medallas de plata
-                                  6.Promedio de medallas de bronce
-                                  7.Medallero informativo
-                                  8.Crear Puntaje total ordenado
-                                  9.Imprimir puntaje total ordenado
-                                  10.SALIR \n""");
-                bandera = entrada4.nextInt();
-                
-                if(bandera == 1)
-                {   
+
+        do {
+            System.out.println("\nEliga una opcion");
+            System.out.println("""
+                    1.Iniciar Programa
+                    2.Registrar Informacion
+                    3.Calcular Puntaje total
+                    4.Imprimir puntaje de cada pais
+                    5.Pais con mas medallas de plata
+                    6.Promedio de medallas de bronce
+                    7.Medallero informativo
+                    8.Crear Puntaje total ordenado
+                    9.Imprimir puntaje total ordenado
+                    10.SALIR \n""");
+            bandera = entrada.nextInt();
+
+            switch (bandera) {
+                case 1 -> {
                     System.out.println("Cuantos paises desea ingresar");
                     int cantidadPaises = entrada.nextInt();
-                    int contador = 0;
-                    int numero = 1;
-                    while(cantidadPaises != contador)
-                    {
-                        out.print("Escriba el pais  #"+numero+ " ");
-                        String pais = in.readLine();
-                        paises.add(pais);
-                        contador +=1;
-                        numero += 1;   
-                    }
-                    
-                }
-                if(bandera == 2)
-                {
-                   for(int p = 0; p < paises.size(); p++)
-                   {
-                        int medallaOro, medallaPlata, medallaBronce; 
-                        
-                        System.out.println("Cuantas medallas de oro para  " + paises.get(p ));
-                        medallaOro = entrada.nextInt();
-                        oro.add(medallaOro);
-                        
-                        System.out.println("Cuantas medallas de plata para "+ paises.get(p));
-                        medallaPlata = entrada2.nextInt();
-                        plata.add(medallaPlata);
-        
-                        System.out.println("Cuantas medallas de bronce para "+ paises.get(p));
-                        medallaBronce = entrada3.nextInt();
-                        bronce.add(medallaBronce);
-                   }
-                }
-                if(bandera == 3)
-                {
-                    for (int i = 0; i < paises.size(); i++)
-                    {
-                        puntajeTotal.add(oro.get(i)*3 + plata.get(i)* 2 + bronce.get(i));
+                    for (int i = 0; i < cantidadPaises; i++) {
+                        System.out.print("Escriba el pais #" + (i + 1) + ": ");
+                        paises.add(entrada.next());
                     }
                 }
-                if(bandera == 4)
-                {
-                    System.out.print("\nTabla de puntaje\n");
-                    System.out.printf("%10s |%8s%n", "Paises","puntajes");
-                    for(int j = 0; j < paises.size(); j++)
-                    {
-                        System.out.printf("%n %8s  %8s",paises.get(j) , puntajeTotal.get(j));
+                case 2 -> {
+                    for (String pais : paises) {
+                        System.out.println("Cuantas medallas de oro para " + pais + ": ");
+                        oro.add(entrada.nextInt());
+
+                        System.out.println("Cuantas medallas de plata para " + pais + ": ");
+                        plata.add(entrada.nextInt());
+
+                        System.out.println("Cuantas medallas de bronce para " + pais + ": ");
+                        bronce.add(entrada.nextInt());
                     }
                 }
-                if(bandera == 5)
-                {
-                    
-                    Collections.max(plata);
-                }
-                
-                if(bandera == 6)
-                {
-                    int suma = 0;
-                    int count = 0;
-                    while( count < bronce.size())
-                    {
-                        suma += bronce.get(count);
-                        count ++;
+                case 3 -> {
+                    for (int i = 0; i < paises.size(); i++) {
+                        puntajeTotal.add(oro.get(i) * 3 + plata.get(i) * 2 + bronce.get(i));
                     }
-                    System.out.print("\nEl promedio de medallas de bronce es:\n" + suma/bronce.size()+" \n");
                 }
-                
-                if(bandera == 7)
-                {
-                    
+                case 4 -> {
+                    System.out.println("\nTabla de puntaje");
+                    System.out.printf("%-15s | %-10s%n", "Pais", "Puntaje");
+                    for (int j = 0; j < paises.size(); j++) {
+                        System.out.printf("%-15s | %-10d%n", paises.get(j), puntajeTotal.get(j));
+                    }
                 }
-                
-                if(bandera == 8)
-                {
-                    
+                case 5 -> {
+                    int maxPlataIndex = plata.indexOf(Collections.max(plata));
+                    System.out.println("El país con más medallas de plata es: " + paises.get(maxPlataIndex));
                 }
-                
-                if(bandera == 9)
-                {
-                    
-                }                
-            } while (bandera != 10);
-  
+                case 6 -> {
+                    int sumaBronce = bronce.stream().mapToInt(Integer::intValue).sum();
+                    double promedioBronce = (double) sumaBronce / bronce.size();
+                    System.out.println("El promedio de medallas de bronce es: " + promedioBronce);
+                }
+                case 7 -> {
+                    System.out.println("\nMedallero informativo");
+                    System.out.printf("%-15s | %-15s | %-15s | %-15s%n", "Pais", "Oro", "Plata", "Bronce");
+                    for (int k = 0; k < paises.size(); k++) {
+                        System.out.printf("%-15s | %-15d | %-15d | %-15d%n", paises.get(k), oro.get(k), plata.get(k), bronce.get(k));
+                    }
+                }
+                case 8 -> {
+                    ArrayList<Integer> puntajeTotalOrdenado = new ArrayList<>(puntajeTotal);
+                    Collections.sort(puntajeTotalOrdenado, Collections.reverseOrder());
+
+                    ArrayList<String> paisesOrdenado = new ArrayList<>();
+                    for (int puntaje : puntajeTotalOrdenado) {
+                        int index = puntajeTotal.indexOf(puntaje);
+                        paisesOrdenado.add(paises.get(index));
+                    }
+
+                    System.out.println("\nTabla de posiciones");
+                    System.out.printf("%-15s | %-10s%n", "Pais", "Puntaje total");
+                    for (int m = 0; m < paisesOrdenado.size(); m++) {
+                        System.out.printf("%-15s | %-10d%n", paisesOrdenado.get(m), puntajeTotalOrdenado.get(m));
+                    }
+                }
+                case 9 -> {
+                    System.out.println("\nTabla de puntaje total ordenado");
+                    System.out.printf("%-15s | %-10s%n", "Pais", "Puntaje total");
+                    for (int n = 0; n < paises.size(); n++) {
+                        System.out.printf("%-15s | %-10d%n", paises.get(n), puntajeTotal.get(n));
+                    }
+                }
+                case 10 -> System.out.println("Saliendo del programa...");
+                default -> System.out.println("Opción inválida, por favor seleccione una opción válida.");
+            }
+        } while (bandera != 10);
     }
 }
