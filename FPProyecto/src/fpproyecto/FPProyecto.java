@@ -15,6 +15,8 @@ public class FPProyecto {
 
     public static void main(String[] args) throws IOException {
         Scanner entrada = new Scanner(System.in);
+        Scanner entrada1 = new Scanner(System.in);
+        Scanner entrada2 = new Scanner(System.in);
 
         ArrayList<String> paises = new ArrayList<>();
         ArrayList<Integer> oro = new ArrayList<>();
@@ -54,16 +56,17 @@ public class FPProyecto {
                         oro.add(entrada.nextInt());
 
                         System.out.println("Cuantas medallas de plata para " + pais + ": ");
-                        plata.add(entrada.nextInt());
+                        plata.add(entrada1.nextInt());
 
                         System.out.println("Cuantas medallas de bronce para " + pais + ": ");
-                        bronce.add(entrada.nextInt());
+                        bronce.add(entrada2.nextInt());
                     }
                 }
                 case 3 -> {
                     for (int i = 0; i < paises.size(); i++) {
                         puntajeTotal.add(oro.get(i) * 3 + plata.get(i) * 2 + bronce.get(i));
                     }
+                    System.out.print("Puntaje total calculado\n");
                 }
                 case 4 -> {
                     System.out.println("\nTabla de puntaje");
